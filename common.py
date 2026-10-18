@@ -3,8 +3,8 @@ from aiogram.filters import Command, CommandStart
 from aiogram.fsm.context import FSMContext
 from aiogram.types import CallbackQuery, Message
 
-from utils.ui import main_menu, show
-from utils.validators import esc
+from ui import main_menu, show
+from validators import esc
 
 router = Router(name="common")
 

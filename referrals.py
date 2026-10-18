@@ -1,4 +1,5 @@
-from services import ledger, settings
+import ledger
+import settings
 
 
 async def reward_if_due(pool, user_id):

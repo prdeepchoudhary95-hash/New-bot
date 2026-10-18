@@ -6,10 +6,12 @@ from aiogram import BaseMiddleware
 from aiogram.exceptions import TelegramAPIError
 from aiogram.types import CallbackQuery, Message
 
-from services import referrals, settings, users
-from utils.notify import safe_send
-from utils.ui import kb
-from utils.money import fmt
+import referrals
+import settings
+import users
+from notify import safe_send
+from ui import kb
+from money import fmt
 
 log = logging.getLogger(__name__)
 _MEMBER_STATUSES = {"creator", "administrator", "member"}

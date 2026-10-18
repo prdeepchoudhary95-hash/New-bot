@@ -10,9 +10,16 @@ from aiogram.enums import ParseMode
 from aiogram.fsm.storage.memory import MemoryStorage
 
 from config import ConfigError, load_config
-from db.pool import create_pool, init_schema
-from handlers import admin_content, admin_core, admin_withdrawals, common, fallback, tasks, user, withdraw
-from utils.middleware import AccessMiddleware
+from pool import create_pool, init_schema
+import admin_content
+import admin_core
+import admin_withdrawals
+import common
+import fallback
+import tasks_handler as tasks
+import user
+import withdraw
+from middleware import AccessMiddleware
 
 log = logging.getLogger("bot")
 

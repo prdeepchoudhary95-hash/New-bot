@@ -2,7 +2,7 @@ import logging
 
 import asyncpg
 
-from db.schema import MIGRATIONS
+from schema import MIGRATIONS
 
 log = logging.getLogger(__name__)
 _LOCK_ID = 727272  # advisory lock, taaki do instances ek saath migrate na karein
@@ -30,6 +30,6 @@ async def init_schema(pool):
                 log.info("Migration %s apply hua", version)
         finally:
             await conn.execute("SELECT pg_advisory_unlock($1)", _LOCK_ID)
-    from services import settings
+    import settings
 
     await settings.ensure_defaults(pool)

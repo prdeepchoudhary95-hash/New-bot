@@ -1,6 +1,6 @@
 import asyncpg
 
-from services import ledger
+import ledger
 
 
 class TaskUnavailable(Exception):

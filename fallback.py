@@ -1,7 +1,7 @@
 from aiogram import Router
 from aiogram.types import CallbackQuery, Message
 
-from utils.ui import main_menu
+from ui import main_menu
 
 router = Router(name="fallback")
 

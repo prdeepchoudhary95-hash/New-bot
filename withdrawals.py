@@ -1,7 +1,8 @@
 import asyncpg
 
-from services import ledger, settings
-from services.ledger import InsufficientFunds  # noqa: F401  (handlers import karte hain)
+import ledger
+import settings
+from ledger import InsufficientFunds  # noqa: F401  (handlers import karte hain)
 
 
 class WithdrawalsDisabled(Exception):

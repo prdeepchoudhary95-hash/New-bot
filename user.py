@@ -3,11 +3,15 @@ from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.types import CallbackQuery, Message
 
-from services import bonus, leaderboard, promos, settings, users
-from utils import timeutil
-from utils.money import fmt
-from utils.ui import HOME_BTN, KIND_LABEL, WD_STATUS, kb, show
-from utils.validators import clean_code, esc, mask_name
+import bonus
+import leaderboard
+import promos
+import settings
+import users
+import timeutil
+from money import fmt
+from ui import HOME_BTN, KIND_LABEL, WD_STATUS, kb, show
+from validators import clean_code, esc, mask_name
 
 router = Router(name="user")
 
@@ -83,7 +87,7 @@ async def hist_bonus(cb: CallbackQuery, user, pool):
 
 @router.callback_query(F.data == "hist:wd")
 async def hist_wd(cb: CallbackQuery, user, pool):
-    from services import withdrawals
+    import withdrawals
 
     await cb.answer()
     rows = await withdrawals.user_history(pool, user["tg_id"], 10)

@@ -5,14 +5,15 @@ from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.types import CallbackQuery, Message
 
-from handlers.filters import IsAdmin
-from services import admin as admin_svc
-from services import promos, tasks
-from utils import timeutil
-from utils.money import fmt, parse_rupees
-from utils.notify import safe_send
-from utils.ui import SUB_STATUS, kb, show
-from utils.validators import clean_code, clean_text, esc, parse_int
+from filters import IsAdmin
+import admin as admin_svc
+import promos
+import tasks
+import timeutil
+from money import fmt, parse_rupees
+from notify import safe_send
+from ui import SUB_STATUS, kb, show
+from validators import clean_code, clean_text, esc, parse_int
 
 log = logging.getLogger(__name__)
 router = Router(name="admin_content")

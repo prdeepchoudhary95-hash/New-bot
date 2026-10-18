@@ -1,4 +1,4 @@
-from utils import timeutil
+import timeutil
 
 
 async def top(db, weekly, limit=10):

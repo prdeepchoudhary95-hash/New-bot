@@ -5,11 +5,12 @@ from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.types import CallbackQuery, Message
 
-from services import settings, withdrawals
-from utils.money import fmt, parse_rupees
-from utils.notify import notify_admins
-from utils.ui import HOME_BTN, kb, show
-from utils.validators import clean_upi, esc
+import settings
+import withdrawals
+from money import fmt, parse_rupees
+from notify import notify_admins
+from ui import HOME_BTN, kb, show
+from validators import clean_upi, esc
 
 log = logging.getLogger(__name__)
 router = Router(name="withdraw")

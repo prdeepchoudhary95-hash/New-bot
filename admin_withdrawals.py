@@ -3,14 +3,14 @@ import logging
 from aiogram import F, Router
 from aiogram.types import CallbackQuery
 
-from handlers.filters import IsAdmin
-from services import admin as admin_svc
-from services import withdrawals
-from utils import timeutil
-from utils.money import fmt
-from utils.notify import safe_send
-from utils.ui import WD_STATUS, kb, show
-from utils.validators import esc
+from filters import IsAdmin
+import admin as admin_svc
+import withdrawals
+import timeutil
+from money import fmt
+from notify import safe_send
+from ui import WD_STATUS, kb, show
+from validators import esc
 
 log = logging.getLogger(__name__)
 router = Router(name="admin_withdrawals")
